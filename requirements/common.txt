@@ -1,3 +1,4 @@
 # ryansty_com/requirements.txt
 
 django==2.0.4
+django-pagedown==1.0.4

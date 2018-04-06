@@ -60,6 +60,8 @@ coverage.xml
 *.log
 *.pot
 *.sqlite
+*.sqlite3
+migrations/
 
 # Sphinx documentation
 docs/_build/
