@@ -26,11 +26,7 @@ SECRET_KEY = '46jddgg28%$)bti0l7dsvvobhqv(+&#k%1e^@_df*)w5--5zye'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'ryansty.com',
-    'www.ryansty.com',
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -115,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
