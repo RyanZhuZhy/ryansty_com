@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+{{ post.title }}
+<br>
+{{ post.content|markdown }}
+{% endblock %}
