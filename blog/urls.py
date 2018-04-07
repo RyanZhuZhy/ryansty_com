@@ -18,4 +18,5 @@ from blog import views
 
 urlpatterns = [
     path('page/<int:id>/', views.page, name='blog-page'),
+    path('list/', views.pagelist, name='blog-list'),
 ]
