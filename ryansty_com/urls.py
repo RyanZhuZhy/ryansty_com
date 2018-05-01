@@ -18,9 +18,11 @@ from django.urls import path
 from django.urls import include
 from blog import urls as blog_urls
 from blog import views as blog_views
+from ryansty_com import views as ryansty_views
 
 urlpatterns = [
-    path('', blog_views.pagelist, name='index'),
+    path('', ryansty_views.home, name='index'),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('test/', ryansty_views.test, name='text'),
 ]

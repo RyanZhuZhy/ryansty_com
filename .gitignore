@@ -74,4 +74,5 @@ target/
 *.lock
 *.pid
 cms/django
+test.html
 

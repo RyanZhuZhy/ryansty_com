@@ -1,13 +1,40 @@
 {% extends 'base.html' %}
+{% load markdown_deux_tags %}
+{% load static %}
 
 {% block title %}文章列表{% endblock %}
 
 {% block content %}
   {% for post in post_list %}
-    <li>
-      {{ post.title }}
-      <br>
-      {{ post.content }}
-    </li>
+    <article>
+      <h2><a href="#" >{{ post.title }}</a></h2>
+      <p class="info">
+        {{ post.pub_time }}  |  by 
+        <span>
+	  <a href="#"  rel="author">Ryzen</a>
+	</span>  |  
+        <a href="#"  rel="category">
+	  {% for tag in post.tags.all %}
+	    {{ tag }} 
+	  {% endfor %}
+	</a>
+      </p>
+      <div class="time">
+        <p>{{ post.pub_time | date:"M" }}<br>
+	<span>{{ post.pub_time | date:"d" }}</span></p>
+      </div>
+    
+      <p><img src="{% static "images/caffee-break-final-510x150.jpg" %}"height="150" width="510"></p>
+    
+      <div class="entry">
+	<p>{{ post.content|markdown }}</p>
+	<p> <a href="#" class="more-link">Read full story</a></p>
+      </div>
+
+      <div class="clear"></div>
+    
+      <p class="bottom_info"><a href="#" >1 Comment »</a></p>
+
+    </article>
   {% endfor %}
 {% endblock %}
