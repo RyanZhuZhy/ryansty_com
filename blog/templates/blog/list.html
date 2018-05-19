@@ -7,8 +7,9 @@
 {% block content %}
   {% for post in post_list %}
     <article>
-      <h2><a href="#" >{{ post.title }}</a></h2>
-      <p class="info">
+      <h1><a href="#" >{{ post.title }}</a></h1>
+      <hr>
+      <p class="">
         {{ post.pub_time }}  |  by 
         <span>
 	  <a href="#"  rel="author">Ryzen</a>
@@ -18,22 +19,23 @@
 	    {{ tag }} 
 	  {% endfor %}
 	</a>
+	<a href="/admin/blog/article/{{ post.id }}/change/">修改</a>
       </p>
-      <div class="time">
+      <!-- div class="time">
         <p>{{ post.pub_time | date:"M" }}<br>
 	<span>{{ post.pub_time | date:"d" }}</span></p>
-      </div>
+      </div --> 
     
-      <p><img src="{% static "images/caffee-break-final-510x150.jpg" %}"height="150" width="510"></p>
-    
-      <div class="entry">
+      <hr>
+
+      <div class="">
 	<p>{{ post.content|markdown }}</p>
-	<p> <a href="#" class="more-link">Read full story</a></p>
+	<!-- p> <a href="#" class="more-link">Read full story</a></p -->
       </div>
 
-      <div class="clear"></div>
+      <!-- div class="clear"></div>
     
-      <p class="bottom_info"><a href="#" >1 Comment »</a></p>
+      <p class="bottom_info"><a href="#" >1 Comment »</a></p -->
 
     </article>
   {% endfor %}

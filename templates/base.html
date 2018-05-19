@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html crossriderapp2258="true">
+<html>
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -11,52 +11,51 @@
   <meta charset="UTF-8">
 
   <!-- links -->
-  <link rel="stylesheet" type="text/css" media="screen" href="{% static "/css/style.css" %}">
-
+  <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
   <!-- scripts -->
 
   <!-- IE Hacks -->
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
-<body class="home blog">
+<body>
      
   <!-- header -->
-  <header>
-    <div id="light">
-      <div class="container_16">
-        <h1 class="grid_8"><a href="#">猪 圈</a></h1>
-	<nav class="grid_8">
-	  <ul id="menu-menu" class="menu">
-	    <li><a href="#">Home</a></li>
-	    <li><a href="#">About</a></li>
-	    <li><a href="#">Contact</a></li>
-	  </ul>					
-        </nav>
-      </div>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #e3f2fd;">
+    <div class="collapse navbar-collapse col-2">
+      <a class="navbar-brand" href="#">Ryan的小站</a>
     </div>
-  </header>
-
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav"> 
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+	<li class="nav-item"><a class="nav-link" href="/blog/list">Blog</a></li>
+	<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      </ul>					
+    </div>
+    <a class="btn btn-info" role="button" href="/admin/blog/article/add/">
+      Write Article
+    </a>
+  </nav>
+  
   <!-- wrapper -->
-  <div id="wrapper">
-    <div class="container_16">
-      <section id="posts" class="prefix_1 grid_9">
+  <div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+      <div class="col-6">
       {% block content %}默认内容，需覆盖{% endblock %}
     		
-        <div class="navigation">
+        <!-- div class="navigation">
           <div class="alignleft"><a href="#">Older Posts</a></div>
-	</div>
+	</div -->
+      </div>
 
-      </section>
-
-      <aside class="prefix_1 grid_5">
-					
+      <div class="col-2">
         <!-- search -->
         <form action="#" method="get">
 	  <input id="search" name="s" value="I'm searching for..." type="text">
         </form>
             
         <!-- Categories-->
+	<hr>
 	<h4>标签</h4>
 	<ul class="categories">
 	  {% for tag in tag_list %}
@@ -101,7 +100,8 @@
 	</ul>
         <hr>
 
-      </aside>
+      <!-- /aside -->
+      </div>
     </div>
   </div>
 
